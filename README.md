@@ -1,7 +1,7 @@
-```markdown
+
 # GetTube - Clon de YouTube
 
-![GetTube Screenshot](screenshot.png) <!-- Reemplaza con la ruta correcta de tu imagen -->
+![GetTube Screenshot](screenshot.png) 
 
 GetTube es un clon de YouTube desarrollado con fines educativos. Este proyecto replica las funcionalidades principales de YouTube, como la visualización de videos, categorías dinámicas y un diseño responsive. Sin embargo, no incluye funcionalidades como shorts o búsqueda por voz.
 
@@ -14,13 +14,13 @@ GetTube es un clon de YouTube desarrollado con fines educativos. Este proyecto r
 
 ## Demo
 
-Puedes probar la demo en vivo aquí: [Demo de GetTube](https://tudemo.com)
+Puedes probar la demo en vivo aquí: [Demo de GetTube](https://winxer.org/script/gettube)
 
 ## Instalación
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tuusuario/gettube.git
+   git clone https://github.com/eduaryein/GetTube-front.git
    ```
 2. Abre el archivo `index.html` en tu navegador.
 
@@ -50,7 +50,7 @@ Más información en: https://winxer.org
 
 - **Demo**: [Probar GetTube](https://tudemo.com)
 - **Sitio web del autor**: [https://winxer.org](https://winxer.org)
-- **Código fuente completo**: [Repositorio en GitHub](https://github.com/tuusuario/gettube)
+- **Código fuente completo**: [Repositorio en GitHub](https://github.com/eduaryein/GetTube-front)
 
 ## Contribuciones
 
