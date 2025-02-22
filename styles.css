@@ -1,0 +1,636 @@
+/*
+GetTube - YouTube Clone
+Copyright (C) 2023 Eduardo Nava (@winxer)
+
+This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
+For more details, visit: https://creativecommons.org/licenses/by-nc/4.0/
+*/
+
+:root {
+  --bg-gray:#f4f6f6;
+  --bg-gray-2:#ebedef;
+  --bg-primary:#03afd0;
+  /* Colores del modo claro (predeterminado) */
+  --bg-color: #ffffff;
+  --text-color: #030303;
+  --aside-bg-color: #ffffff;
+  --card-bg-color: #f9f9f9;
+  --card-text-color: #030303;
+  --header-bg-color: #ffffff;
+  --header-text-color: #030303;
+  --overlay-bg-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* Colores del modo oscuro */
+[data-theme="dark"] {
+  --bg-color: #0f0f0f;
+  --text-color: #ffffff;
+  --aside-bg-color: #202020;
+  --card-bg-color: #282828;
+  --card-text-color: #ffffff;
+  --header-bg-color: #202020;
+  --header-text-color: #ffffff;
+  --overlay-bg-color: rgba(255, 255, 255, 0.1);
+}
+/*Globas*/
+body{
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+/* Aplicar colores a los textos */
+h1, h2, h3, p, a {
+  color: var(--text-color);
+}
+
+/* Aplicar colores al menú */
+.wx-sidenav li > a {
+  color: var(--text-color);
+}
+
+.wx-sidenav li > a:hover {
+  background-color: var(--card-bg-color);
+}
+
+/* Aplicar colores al header */
+header .wx-navbar {
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+}
+
+/* Aplicar colores a los botones */
+.wx-nav-button {
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+}
+
+/* Aplicar colores a las tarjetas de video */
+.wx-video {
+  background-color: var(--card-bg-color);
+  color: var(--card-text-color);
+}
+
+.wx-theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--card-bg-color);
+  color: var(--card-text-color);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.wx-theme-toggle:hover {
+  background-color: var(--header-bg-color);
+}
+
+a{letter-spacing: 0.50px;}
+
+a i{
+  margin-right: 10px!important;
+}
+
+.divider {
+  height: 1px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+}
+
+/*Header Mneu*/
+
+header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+}
+header .wx-left-movil button {
+  border: none;
+  background: white;
+  margin-right: 20px;
+}
+
+header .wx-left-movil a img {
+  width: 40px;
+}
+header .wx-left-movil a.wx-logo span{
+  font-weight: bold;
+}
+
+header .wx-left-movil button i {
+  font-size: 20px;
+}
+
+header .wx-navbar {
+  padding: 10px 30px;
+}
+
+header .wx-navbar .wx-menu-search .input-group{margin-bottom: -15px;}
+header .wx-navbar .wx-menu-search input {
+  border: 2px solid var(--bg-gray-2);
+  border-radius: 20px;
+  height: 40px;
+  padding: 10px 20px;
+}
+
+header .wx-navbar .wx-menu-search .btn {
+  height: 40px;
+  background: var(--bg-gray-2);
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+header .wx-navbar .wx-menu-search .btn i{font-size: 18px;}
+
+header .wx-navbar .wx-nav-items {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header .wx-navbar .wx-nav-items li {
+  margin-left: 15px;
+}
+
+header .wx-navbar .wx-nav-items li a {
+  font-size: 15px;
+}
+
+header .wx-navbar .wx-nav-items li a.btn-add {
+  background: var(--bg-gray);
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+header .wx-navbar .wx-nav-items li a.btn-search {
+  background: var(--bg-gray);
+  padding: 15px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+}
+
+header .wx-navbar .wx-nav-items li a.btn-add:hover {
+  background: var(--bg-gray-2);
+  transition: all .3s ease;
+  color: black;
+}
+
+header .wx-navbar .wx-nav-items li a img {
+  width: 40px;
+  border-radius: 50px;
+}
+
+header .wx-navbar .wx-nav-items .img-profile .dropdown-toggle::after {
+  display: none;
+}
+/*Media screen*/
+@media only screen and (min-width: 768px){
+  header .wx-navbar .wx-menu-search input {
+      width: 350px;
+  }
+}
+
+@media only screen and (min-width: 992px){
+  header .wx-navbar .wx-menu-search input {
+      width: 400px;
+  }
+}
+
+@media only screen and (min-width: 1024px){
+  header .wx-navbar .wx-menu-search input {
+      width: 500px;
+  }
+}
+
+/*Aside menu*/
+
+.wx-sidenav{
+  position: fixed;
+  width: 300px;
+  left: 0;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  height: calc(100% + 60px);
+  height: -moz-calc(100%);
+  padding-bottom: 60px;
+  background-color: #fff;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.wx-sidenav .divider {
+  margin: 8px 0 0 0;
+}
+
+.wx-sidenav ul{list-style: none; margin: 0;padding: 0;}
+.wx-sidenav li {
+  float: none;
+  line-height: 48px;
+}
+
+.wx-sidenav li.active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.wx-sidenav li.active a{
+  font-weight: 500;
+}
+
+.wx-sidenav li.header{
+  padding: 0 30px;
+  color: black;
+/*  font-size: 20px;*/
+  font-weight: 600;
+  letter-spacing: 0.50px;
+}
+
+
+.wx-sidenav li > a {
+  color: rgba(0, 0, 0, 0.87);
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 32px;
+}
+.wx-sidenav li.active > a i{color: var(--bg-primary);}
+.wx-sidenav li > a i{font-size: 20px;}
+
+.wx-sidenav li > a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.wx-sidenav li > a.btn, .wx-sidenav li > a.btn-large, .wx-sidenav li > a.btn-small, .wx-sidenav li > a.btn-large, .wx-sidenav li > a.btn-flat, .wx-sidenav li > a.btn-floating {
+  margin: 10px 15px;
+}
+
+.wx-sidenav li > a.btn, .wx-sidenav li > a.btn-large, .wx-sidenav li > a.btn-small, .wx-sidenav li > a.btn-large, .wx-sidenav li > a.btn-floating {
+  color: #fff;
+}
+
+.wx-sidenav li > a.btn-flat {
+  color: #343434;
+}
+
+.wx-sidenav li > a.btn:hover, .wx-sidenav li > a.btn-large:hover, .wx-sidenav li > a.btn-small:hover, .wx-sidenav li > a.btn-large:hover {
+  background-color: #2bbbad;
+}
+
+.wx-sidenav li > a.btn-floating:hover {
+  background-color: #26a69a;
+}
+
+@media only screen and (min-width:768px){
+  .wx-sidenav{
+    top: 64px;
+  }
+}
+
+@media only screen and (max-width:767px){
+  .wx-sidenav{
+    -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+    will-change: transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translateX(-105%);
+          transform: translateX(-105%);
+  }
+}
+
+.wx-sidenav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  height: 120vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 997;
+  display: none;
+}
+
+/* Animación para el menú lateral */
+.wx-sidenav {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Estilos para ocultar el menú en pantallas grandes */
+.wx-sidenav-hidden {
+  transform: translateX(-100%);
+}
+
+/* Estilos para expandir el contenido principal en pantallas grandes */
+.wx-main-expanded {
+  margin-left: 0 !important;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Estilos para mostrar el menú en dispositivos móviles */
+.wx-sidenav-open {
+  transform: translateX(0) !important;
+}
+
+/* Estilos para el overlay en dispositivos móviles */
+.wx-sidenav-overlay {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.wx-sidenav-overlay[style*="display: block"] {
+  opacity: 1;
+}
+
+/* Contenedor de categorías */
+.categories-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+/*  background-color: #f9f9f9;*/
+/*  border-bottom: 1px solid #ddd;*/
+  position: relative;
+}
+
+/* Lista de categorías */
+.categories-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+  padding: 0 20px;
+  flex: 1;
+}
+
+/* Ocultar la barra de desplazamiento */
+.categories-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Estilos para cada categoría */
+.category {
+  padding: 8px 16px;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category:hover {
+  background-color: #d0d0d0;
+}
+
+/* Botones de navegación */
+.categories-container .nav-button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+}
+
+.categories-container .nav-button.left {
+  left: 0;
+}
+
+.categories-container .nav-button.right {
+  right: 0;
+}
+
+.categories-container .nav-button i {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Ocultar flechas cuando no hay más contenido */
+.categories-container  .nav-button.hidden {
+  display: none;
+}
+
+
+/*Content area*/
+main{
+  padding: 10px 35px;
+}
+/* Estilos para el contenido principal (main) */
+#content {
+  margin-left: 300px; /* Espacio para el aside */
+  transition: margin-left 0.3s ease-in-out; /* Animación suave */
+}
+
+/* Cuando el menú está oculto en pantallas grandes */
+.wx-sidenav-hidden + #content {
+  margin-left: 0; /* El main ocupa el 100% */
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 767px) {
+  #content {
+    margin-left: 0; /* El main ocupa el 100% */
+  }
+}
+
+/* Contenedor de videos */
+.wx-videos-container {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  position: relative;
+}
+
+/* Lista de videos */
+.wx-videos-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  flex: 1;
+}
+
+/* Ocultar la barra de desplazamiento */
+.wx-videos-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Estilos para cada video */
+.wx-video {
+  flex: 0 0 calc(33.33% - 20px); /* 3 videos en pantallas grandes */
+  max-width: calc(33.33% - 20px);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.wx-video:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Miniatura del video */
+.wx-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 180px; /* Altura fija para la miniatura */
+  overflow: hidden;
+}
+
+.wx-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay de la miniatura */
+.wx-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.wx-video:hover .wx-overlay {
+  opacity: 1;
+}
+
+.wx-overlay i {
+  font-size: 24px;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.wx-overlay span {
+  font-size: 16px;
+  color: #fff;
+}
+
+/* Detalles del video */
+.wx-details {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  flex: 1; /* Hacer que los detalles ocupen el espacio restante */
+}
+
+/* Logo del canal */
+.wx-channel-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Información del video */
+.wx-info {
+  flex: 1;
+}
+
+/* Título del video */
+.wx-video-title {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limitar a 2 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Nombre del canal */
+.wx-channel-name {
+  font-size: 14px;
+  margin: 0;
+  color: #666;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Limitar a 1 línea */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Botones de navegación */
+.wx-nav-button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  display: none; /* Ocultar por defecto */
+}
+
+.wx-nav-button.wx-left {
+  left: 0;
+}
+
+.wx-nav-button.wx-right {
+  right: 0;
+}
+
+.wx-nav-button i {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Estilos responsive */
+@media (max-width: 1024px) {
+  .wx-video {
+    flex: 0 0 calc(50% - 20px); /* 2 videos en pantallas medianas */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .wx-video {
+    flex: 0 0 100%; /* 1 video en móviles */
+    max-width: 100%;
+  }
+
+  .wx-nav-button {
+    display: flex; /* Mostrar flechas en móviles */
+  }
+}

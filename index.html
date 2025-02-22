@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clon de YouTube</title>
+  <!--
+  GetTube - YouTube Clone
+  Copyright (C) 2023 Eduardo Nava (@winxer)
+
+  This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
+  For more details, visit: https://creativecommons.org/licenses/by-nc/4.0/
+  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css" integrity="sha512-QfDd74mlg8afgSqm3Vq2Q65e9b3xMhJB4GZ9OcHDVy1hZ6pqBJPWWnMsKDXM7NINoKqJANNGBuVRIpIJ5dogfA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/material-kit.css"> <!-- Asegúrate de tener el archivo CSS del Material Kit -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css"> <!-- Incluye tu archivo de estilos CSS -->
+
+</head>
+<body>
+  <div class="wx-sidenav-overlay" id="overlay"></div>
+  <button id="themeToggle" class="wx-theme-toggle">
+    <i class="fas fa-moon"></i>
+  </button>
+  <header>
+    <nav class="wx-navbar w-100 d-flex flex-row justify-content-between align-items-center">
+      <!-- Inicio lado izquierdo botón y logo -->
+      <div class="wx-left-movil d-flex align-items-center">
+        <button type="button">
+          <i class="fas fa-bars"></i>
+        </button>
+        <a href="javascript:void(0)" class="wx-logo d-flex align-items-center">
+          <img src="assets/images/logo.png" alt="logo">
+          <span class="ms-1">GetTube</span>
+        </a>
+      </div>
+      <!-- El buscador -->
+      <div class="wx-menu-search d-flex d-none d-md-block d-lg-block d-xl-block d-sm-none">
+        <div class="input-group">
+          <input type="text" name="search" class="form-control" placeholder="Buscar">
+          <button type="submit" class="btn"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+      <!-- Los enlaces del menú -->
+      <ul class="wx-nav-items d-flex">
+        <li>
+          <a href="javascript:void(0)" class="btn-search d-flex align-items-center d-md-none d-lg-none d-xl-none"><i class="fas fa-search"></i></a>
+        </li>
+
+        <li>
+          <a href="javascript:void(0)" class="btn-add d-flex align-items-center"><i class="fas fa-add"></i> Crear</a>
+        </li>
+        <li class="dropdown img-profile d-flex align-items-center">
+          <a href="javascript:void(0)" class="dropdown-toggle" id="openMPro" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="assets/images/user.jpg" alt="user">
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="openMPro">
+            <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
+            <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
+            <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+  </header>
+  <aside id="menu_aside" class="wx-sidenav">
+    <ul>
+      <li class="active">
+        <a href="javscript:void(0)">
+          <i class="fas fa-home"></i> Inicio
+        </a>
+      </li>
+      <li>
+        <a href="javscript:void(0)">
+          <i class="fas fa-users"></i> Suscripciones
+        </a>
+        
+      </li>
+      <div class="divider"></div>
+      <li>
+        <a href="javscript:void(0)">
+          <i class="fas fa-history"></i> Historial
+        </a>
+      </li>
+      <li>
+        <a href="javscript:void(0)">
+          <i class="fas fa-list"></i> Lista de reproducciones
+        </a>
+      </li>
+      <li>
+        <a href="javscript:void(0)">
+          <i class="fas fa-video"></i> Mis videos
+        </a>
+      </li>
+      <li>
+        <a href="javscript:void(0)">
+          <i class="fas fa-clock"></i> Ver más
+        </a>
+      </li>
+      <li>
+        <a href="javscript:void(0)">
+          <i class="fas fa-thumbs-up"></i> Videos que me gustan
+        </a>
+      </li>
+      <li class="divider"></li>
+      <li class="header">Suscripciones</li>
+    </ul>
+
+  </aside>
+
+  <main id="content">
+    <div class="categories-container">
+      <!-- Flecha izquierda -->
+      <button class="nav-button left" onclick="scrollCategories(-100)">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <!-- Contenedor de categorías -->
+      <div class="categories-list" id="categoriesList">
+        <div class="category">Todo</div>
+        <div class="category">Música</div>
+        <div class="category">Videojuegos</div>
+        <div class="category">Películas</div>
+        <div class="category">Noticias</div>
+        <div class="category">En vivo</div>
+        <div class="category">Aprendizaje</div>
+        <div class="category">Deportes</div>
+        <div class="category">Moda</div>
+        <div class="category">Tecnología</div>
+        <div class="category">Comedia</div>
+        <div class="category">Cocina</div>
+        <div class="category">Viajes</div>
+        <div class="category">Autos</div>
+        <div class="category">Animales</div>
+        <div class="category">Ciencia</div>
+        <div class="category">Fitness</div>
+        <div class="category">Arte</div>
+        <div class="category">Historia</div>
+        <div class="category">Educación</div>
+      </div>
+
+      <!-- Flecha derecha -->
+      <button class="nav-button right" onclick="scrollCategories(100)">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+      <h1>Bienvenido a Youtube clone</h1>
+
+      <!-- Videos area -->
+      <div class="wx-videos-container">
+        <!-- Flecha izquierda -->
+        <button class="wx-nav-button wx-left" id="wx_leftButton_1">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <!-- Contenedor de videos -->
+        <div class="wx-videos-list" id="wx_videosList_1">
+           <!-- Ejemplo de video -->
+          <div class="wx-video">
+            <a href="javscript:void(0)">
+              <div class="wx-thumbnail">
+                <img src="assets/images/video.jpg" alt="Miniatura del video">
+                <div class="wx-overlay">
+                  <i class="fas fa-play"></i>
+                  <span>Reproducir</span>
+                </div>
+              </div>
+              <div class="wx-details">
+                <img src="assets/images/user.jpg" alt="Logo del canal" class="wx-channel-logo">
+                <div class="wx-info">
+                  <h3 class="wx-video-title">Título del Video</h3>
+                  <p class="wx-channel-name">@NombreDelCanal</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="wx-video">
+            <a href="javscript:void(0)">
+              <div class="wx-thumbnail">
+                <img src="assets/images/video.jpg" alt="Miniatura del video">
+                <div class="wx-overlay">
+                  <i class="fas fa-play"></i>
+                  <span>Reproducir</span>
+                </div>
+              </div>
+              <div class="wx-details">
+                <img src="assets/images/user.jpg" alt="Logo del canal" class="wx-channel-logo">
+                <div class="wx-info">
+                  <h3 class="wx-video-title">Título del Video</h3>
+                  <p class="wx-channel-name">@NombreDelCanal</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="wx-video">
+            <a href="javscript:void(0)">
+              <div class="wx-thumbnail">
+                <img src="assets/images/video.jpg" alt="Miniatura del video">
+                <div class="wx-overlay">
+                  <i class="fas fa-play"></i>
+                  <span>Reproducir</span>
+                </div>
+              </div>
+              <div class="wx-details">
+                <img src="assets/images/user.jpg" alt="Logo del canal" class="wx-channel-logo">
+                <div class="wx-info">
+                  <h3 class="wx-video-title">Título del Video</h3>
+                  <p class="wx-channel-name">@NombreDelCanal</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="wx-video">
+            <a href="javscript:void(0)">
+              <div class="wx-thumbnail">
+                <img src="assets/images/video.jpg" alt="Miniatura del video">
+                <div class="wx-overlay">
+                  <i class="fas fa-play"></i>
+                  <span>Reproducir</span>
+                </div>
+              </div>
+              <div class="wx-details">
+                <img src="assets/images/user.jpg" alt="Logo del canal" class="wx-channel-logo">
+                <div class="wx-info">
+                  <h3 class="wx-video-title">Título del Video</h3>
+                  <p class="wx-channel-name">@NombreDelCanal</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Flecha derecha -->
+        <button class="wx-nav-button wx-right" id="wx_rightButton_1">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="wx-videos-container">
+        <!-- Flecha izquierda -->
+        <button class="wx-nav-button wx-left" id="wx_leftButton_2">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <!-- Contenedor de videos -->
+        <div class="wx-videos-list" id="wx_videosList_2">
+           <!-- Ejemplo de video -->
+          <div class="wx-video">
+            <a href="javscript:void(0)">
+              <div class="wx-thumbnail">
+                <img src="assets/images/video.jpg" alt="Miniatura del video">
+                <div class="wx-overlay">
+                  <i class="fas fa-play"></i>
+                  <span>Reproducir</span>
+                </div>
+              </div>
+              <div class="wx-details">
+                <img src="assets/images/user.jpg" alt="Logo del canal" class="wx-channel-logo">
+                <div class="wx-info">
+                  <h3 class="wx-video-title">Título del Video</h3>
+                  <p class="wx-channel-name">@NombreDelCanal</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="wx-video">
+            <a href="javscript:void(0)">
+              <div class="wx-thumbnail">
+                <img src="assets/images/video.jpg" alt="Miniatura del video">
+                <div class="wx-overlay">
+                  <i class="fas fa-play"></i>
+                  <span>Reproducir</span>
+                </div>
+              </div>
+              <div class="wx-details">
+                <img src="assets/images/user.jpg" alt="Logo del canal" class="wx-channel-logo">
+                <div class="wx-info">
+                  <h3 class="wx-video-title">Título del Video</h3>
+                  <p class="wx-channel-name">@NombreDelCanal</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="wx-video">
+            <a href="javscript:void(0)">
+              <div class="wx-thumbnail">
+                <img src="assets/images/video.jpg" alt="Miniatura del video">
+                <div class="wx-overlay">
+                  <i class="fas fa-play"></i>
+                  <span>Reproducir</span>
+                </div>
+              </div>
+              <div class="wx-details">
+                <img src="assets/images/user.jpg" alt="Logo del canal" class="wx-channel-logo">
+                <div class="wx-info">
+                  <h3 class="wx-video-title">Título del Video</h3>
+                  <p class="wx-channel-name">@NombreDelCanal</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="wx-video">
+            <a href="javscript:void(0)">
+              <div class="wx-thumbnail">
+                <img src="assets/images/video.jpg" alt="Miniatura del video">
+                <div class="wx-overlay">
+                  <i class="fas fa-play"></i>
+                  <span>Reproducir</span>
+                </div>
+              </div>
+              <div class="wx-details">
+                <img src="assets/images/user.jpg" alt="Logo del canal" class="wx-channel-logo">
+                <div class="wx-info">
+                  <h3 class="wx-video-title">Título del Video</h3>
+                  <p class="wx-channel-name">@NombreDelCanal</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Flecha derecha -->
+        <button class="wx-nav-button wx-right" id="wx_rightButton_2">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+  </main>
+
+
+<script src="assets/global/js/jquery.min.js"></script>
+<script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
+<!--  Plugin for TypedJS, full documentation here: https://github.com/inorganik/CountUp.js -->
+<script src="assets/js/plugins/countup.min.js"></script>
+<!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
+<script src="assets/js/material-kit.min.js?v=3.0.4" type="text/javascript"></script>
+
+<script src="main.js"></script>
+</body>
+</html>

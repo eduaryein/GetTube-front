@@ -1,0 +1,14 @@
+GetTube - Clon de YouTube
+Copyright (C) 2023 Eduardo Nava (@winxer)
+
+Este proyecto está licenciado bajo los términos de la Licencia Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).
+
+Usted es libre de:
+- Compartir: Copiar y redistribuir el material en cualquier medio o formato.
+- Adaptar: Remezclar, transformar y construir sobre el material.
+
+Bajo los siguientes términos:
+- Atribución: Si usa este proyecto con fines personales o comerciales, debe dar crédito al autor original (Eduardo Nava) con un enlace a https://winxer.org.
+- NoComercial: No puede usar este proyecto con fines comerciales sin permiso explícito del autor.
+
+Para más detalles, visite: https://creativecommons.org/licenses/by-nc/4.0/
