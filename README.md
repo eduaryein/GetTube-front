@@ -1,71 +1,73 @@
+# GetTube - YouTube Clone
 
-# GetTube - Clon de YouTube
+![GetTube Screenshot](https://github.com/eduaryein/GetTube-front/blob/main/screenshot.PNG)
 
-![GetTube Screenshot](screenshot.png) 
+GetTube is a YouTube clone developed for educational purposes. This project replicates the main functionalities of YouTube, such as video playback, dynamic categories, and a responsive design. However, it does not include features like shorts or voice search.
 
-GetTube es un clon de YouTube desarrollado con fines educativos. Este proyecto replica las funcionalidades principales de YouTube, como la visualización de videos, categorías dinámicas y un diseño responsive. Sin embargo, no incluye funcionalidades como shorts o búsqueda por voz.
+## Key Features
 
-## Características Principales
-
-- **Interfaz moderna y responsive**: Diseño adaptable a dispositivos móviles y de escritorio.
-- **Categorías dinámicas**: Desplazamiento horizontal con flechas de navegación.
-- **Reproducción de videos**: Integración con la API de YouTube para mostrar videos.
-- **Licencia flexible**: Uso gratuito para fines educativos. Atribución requerida para uso personal o comercial.
+- **Modern and responsive interface**: Design adaptable to mobile and desktop devices.
+- **Dynamic categories**: Horizontal scrolling with navigation arrows.
+- **Video playback**: Integration with the YouTube API to display videos.
+- **Flexible license**: Free use for educational purposes. Attribution required for personal or commercial use.
 
 ## Demo
 
-Puedes probar la demo en vivo aquí: [Demo de GetTube](https://winxer.org/script/gettube)
+You can try the live demo here: [GetTube Demo](https://winxer.org/demos/gettube)
 
-## Instalación
+## Installation
 
-1. Clona el repositorio:
+1. Clone the repository:
    ```bash
    git clone https://github.com/eduaryein/GetTube-front.git
    ```
-2. Abre el archivo `index.html` en tu navegador.
+2. Open the `index.html` file in your browser.
 
-## Licencia
+## License
 
-Este proyecto está licenciado bajo la **Licencia Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**.
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)**.
 
-- **Uso educativo**: Puedes usar, modificar y compartir este proyecto libremente sin necesidad de atribución.
-- **Uso personal o comercial**: Si deseas usar este proyecto con fines personales o comerciales, debes incluir un enlace de atribución al autor original (Eduardo Nava) en tu sitio web o aplicación. El enlace debe dirigir a [https://winxer.org](https://winxer.org).
+- **Educational use**: You can freely use, modify, and share this project without the need for attribution.
+- **Personal or commercial use**: If you wish to use this project for personal or commercial purposes, you must include an attribution link to the original author (Eduardo Nava) on your website or application. The link should direct to [https://winxer.org](https://winxer.org).
 
-Para más detalles sobre la licencia, visita: [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/)
+For more details about the license, visit: [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/)
 
-## Atribución
+## Attribution
 
-Si usas este proyecto con fines personales o comerciales, incluye la siguiente atribución en tu sitio web o aplicación:
+If you use this project for personal or commercial purposes, include the following attribution on your website or application:
 
 ```plaintext
-Este proyecto utiliza GetTube, un clon de YouTube desarrollado por Eduardo Nava (@winxer). 
-Más información en: https://winxer.org
+This project uses GetTube, a YouTube clone developed by Eduardo Nava (@winxer). 
+More information at: https://winxer.org
 ```
 
-## Captura de Pantalla
+## Screenshot
 
-![GetTube Screenshot](screenshot.png) <!-- Reemplaza con la ruta correcta de tu imagen -->
+![GetTube Screenshot](https://github.com/eduaryein/GetTube-front/blob/main/screenshot.PNG) <!-- Replace with the correct path to your image -->
 
-## Enlaces
+## Links
 
-- **Demo**: [Probar GetTube](https://tudemo.com)
-- **Sitio web del autor**: [https://winxer.org](https://winxer.org)
-- **Código fuente completo**: [Repositorio en GitHub](https://github.com/eduaryein/GetTube-front)
+- **Demo**: [Try GetTube](https://winxer.org/demos/gettube)
+- **Author's website**: [https://winxer.org](https://winxer.org)
+- **Full source code**: [GitHub Repository](https://github.com/eduaryein/GetTube-front)
 
-## Contribuciones
+## Contributions
 
-Las contribuciones son bienvenidas. Si deseas mejorar este proyecto, por favor:
+Contributions are welcome. If you wish to improve this project, please:
 
-1. Haz un fork del repositorio.
-2. Crea una rama con tu nueva funcionalidad (`git checkout -b nueva-funcionalidad`).
-3. Realiza tus cambios y haz commit (`git commit -m 'Añadir nueva funcionalidad'`).
-4. Haz push a la rama (`git push origin nueva-funcionalidad`).
-5. Abre un Pull Request.
+1. Fork the repository.
+2. Create a branch for your new feature (`git checkout -b new-feature`).
+3. Make your changes and commit them (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin new-feature`).
+5. Open a Pull Request.
 
-## Contacto
+## Contact
 
-Si tienes alguna pregunta o sugerencia, no dudes en contactarme:
+If you have any questions or suggestions, feel free to contact me:
 
-- **Nombre**: Eduardo Nava
-- **Sitio web**: [https://winxer.org](https://winxer.org)
-```
+- **Name**: Eduardo Nava
+- **Website**: [https://winxer.org](https://winxer.org)
+
+## Upgrade to Pro Version
+
+If you are interested in a more advanced version of GetTube with additional features and premium support, visit the following link to get the Pro version: [GetTube Pro](https://winxer.org/item/gettube). Enhance your experience with exclusive functionalities and priority updates!
